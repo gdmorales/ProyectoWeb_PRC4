@@ -3,7 +3,6 @@
     Created on : 12-02-2020, 11:14:29 PM
     Author     : Josue
 --%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -16,23 +15,35 @@
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     </head>
     <body>
-    <div class="container login-container">
+        <%
+            if (request.getParameter("error") != null) {
+        %>
+        <div class="alert alert-danger">
+            <strong>Error!</strong>
+            <%= request.getParameter("error")%>
+            <br>
+        </div>
+        <%
+            }
+        %>
+        
+        <%
+            if (request.getParameter("success") != null) {
+        %>
+        <div class="alert alert-success">
+            <strong>Bienvenido!</strong>
+            <%= request.getParameter("success")%>
+            <br>
+        </div>
+        <%
+            }
+        %>
+        <div class="container login-container">
             <div class="row">
-                <%
-                        if(request.getParameter("error") != null){                     
-                        %>
-                        <div class="alert alert-danger">
-                            <strong>Error!</strong>
-                            <%= request.getParameter("error") %>
-                            <br>
-                        </div>
-                            <%
-                                }
-                            %>
-                       
+
                 <div class="col-md-6 login-form-1">
                     <h3>Login de Usuario</h3>
-                    
+                    <form id="login-form" class="form" action="checklogin.jsp" method="post">
                         <div class="form-group">
                             <input type="text" name="username" class="form-control" placeholder="Digite el Email *" value="" />
                         </div>
@@ -47,20 +58,17 @@
                         </div>
                         <div class="form-group">
                             <a href="#" class="btnForgetPwd">Olvido Contraseña?</a>
-                        </div>
-                        
-                    
-                </div>
+                        </div>  
+                    </form>
+                </div>         
                 <div class="col-md-6 login-form-2">
-                    <div class="login-logo">
-                        <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
-                    </div>
                     <h3>Login de Empleado</h3>
+                    <form id="login-form" class="form" action="checkloginemp.jsp" method="post">
                         <div class="form-group">
-                            <input type="text" name="employee" class="form-control" placeholder="Digite el Email *" value="" />
+                            <input type="text" name="empusername" class="form-control" placeholder="Digite el Email *" value="" />
                         </div>
                         <div class="form-group">
-                            <input type="password" name="employeepass" class="form-control" placeholder="Digite la Contraseña *" value="" />
+                            <input type="password" name="passwordemp" class="form-control" placeholder="Digite la Contraseña *" value="" />
                         </div>
                         <div class="form-group">
                             <input type="submit" name="empingresar" class="btnSubmit" value="Ingresar" />
@@ -69,8 +77,9 @@
 
                             <a href="#" class="btnForgetPwd" value="Login">Olvido contraseña?</a>
                         </div>
+                    </form>
                 </div>
-                        </form>
+
             </div>
         </div>
     </body>
