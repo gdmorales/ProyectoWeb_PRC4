@@ -49,7 +49,7 @@
                             <input type="submit" name="useringresar" class="btnSubmit" value="Ingresar" />
                         </div>
                         <div class="form-group">
-                            <input type="submit" class="btnSubmit" value="Registrate Aqui" />
+                            <input type="submit" class="btnSubmit" formaction="Registrate.jsp" value="Registrate Aqui" />
                         </div>
                         <div class="form-group">
                             <a href="#" class="btnForgetPwd">Olvido Contraseña?</a>
