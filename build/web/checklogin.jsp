@@ -16,6 +16,7 @@ if(rs.getInt(1) == 1){
     //Se asignan parametros de sesión
     HttpSession sesionOk = request.getSession();
     sesionOk.setAttribute("username", username);
+    sesionOk.setAttribute("password", password);
     %>
 <jsp:forward page="Perfil_usuario.jsp" />
 <%

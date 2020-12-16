@@ -1,8 +1,3 @@
-<%-- 
-    Document   : login
-    Created on : 12-02-2020, 11:14:29 PM
-    Author     : Josue
---%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
