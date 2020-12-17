@@ -31,34 +31,35 @@
                         <th>Precio</th>
                         <th style="width: 36px;"></th>
                     </tr>
+                </thead>
                     <%
                         Connection cnn;
                         cnn = conexion.Conectar();
                         int cont = 0;
                         Statement smt = cnn.createStatement();
-                        ResultSet rs = smt.executeQuery("SELECT * FROM pupuseria_final.detalle_ordenes");
+                        ResultSet rs = smt.executeQuery("SELECT * FROM pupuseria_final.detalleordenes");
                         DefaultTableModel modelo = new DefaultTableModel();
                         modelo.addColumn("Cod_Orden");
                         modelo.addColumn("Nombre");
                         modelo.addColumn("Cantidad");
                         modelo.addColumn("Precio");
                     %>
-                </thead>
+                
                
-            </table>
+            
         </div>
         
          <div>
              <%while(rs.next()){%>
                     <tr>
-                        <th><%=rs.getInt(1)%></th>
-                        <th><%=rs.getInt(2)%></th>
-                        <th><%=rs.getInt(3)%></th>
-                        <th><%=rs.getInt(4)%></th>
+                        <td><%=rs.getInt(1)%></td>
+                        <td><%=rs.getString(2) %></td>
+                        <td><%=rs.getInt(3)%></td>
+                        <td><%=rs.getFloat(4) %></td>
                     </tr>
                     <%}%>
                 </div>         
-        
+        </table>
         <div class="modal small hide fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
