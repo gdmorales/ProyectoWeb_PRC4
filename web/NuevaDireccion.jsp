@@ -16,35 +16,61 @@
 
 
 <body>
+    <%
+        if (request.getParameter("error") != null) {
+    %>
+    <div class="alert alert-danger">
+        <strong>Error!</strong>
+        <%= request.getParameter("error")%>
+        <br>
+    </div>
+    <%
+        }
+    %>
 
+    <%
+        if (request.getParameter("success") != null) {
+    %>
+    <div class="alert alert-success">
+        <strong>Realizado!</strong>
+        <%= request.getParameter("success")%>
+        <br>
+    </div>
+    <%
+        }
+    %>
     <div class="container">
 
         <div class="form-sec">
             <h1 align="center">Nueva Dirección</h1> <br>
 
-            <form texto="qryform" id="qryform" method="post" action="mail.php" onsubmit="return(validate());" novalidate="novalidate">
+            <form id="Address-form" class="form" action="aDireccion.jsp" method="post">
                 <div class="form-group">
                     <label>Municipio:</label>
-                    <input type="text" class="form-control" id="name" placeholder="Escribir Municipio" texto="municipio">
+                    <input type="text" class="form-control" id="name" placeholder="Escribir Municipio" texto="municipio" name="municipio" required>
                 </div>
                 <div class="form-group">
                     <label>Dirección:</label>
-                    <input type="email" class="form-control" id="name" placeholder="Escribir Dirección" texto="direccion">
+                    <input type="text" class="form-control" id="name" placeholder="Escribir Dirección" texto="direccion" name="direccion" required>
                 </div>
 
                 <div class="form-group">
                     <label>Punto de referencia:</label>
-                    <input type="text" class="form-control" id="phone" placeholder="Escribir Punto de referencia" texto="referencia">
+                    <input type="text" class="form-control" id="phone" placeholder="Escribir Punto de referencia" texto="referencia" name="ref" required>
                 </div>
                 <div class="form-group">
                     <label>Teléfono:</label>
-                    <input type="text" class="form-control" id="name" placeholder="Escribir Teléfono" texto="telefono">
+                    <input type="text" class="form-control" id="name" placeholder="Escribir Teléfono" texto="telefono" name="telef" required>
                 </div>
 
+
                 <div class="Botones" align="center">
-                <button type="submit" class="btn btn-default">Agregar</button>
-                <button type="submit" class="btn btn-default">Cerrar</button>
+                    <button type="submit" class="btn btn-default">Agregar</button>
+                   
                 </div>
+            </form>
+            <form>
+                 <button type="submit" class="btn btn-default" formaction="Perfil_usuario.jsp">Cerrar</button>
             </form>
         </div>
 

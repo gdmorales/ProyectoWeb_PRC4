@@ -88,7 +88,7 @@
                                                 <label style="font-weight:bold;">Cambiar contraseña</label>
                                             </div>
                                             <div class="col-md-8 col-6">
-                                                <a class="navbar-brand" href="cambio_de_contrasena.jsp">Click aqui</a>
+                                                <a class="navbar-brand" href="CambioContra.jsp">Click aqui</a>
                                             </div>
                                         </div>
                                         <div class="row">
