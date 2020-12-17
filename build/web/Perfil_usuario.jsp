@@ -107,6 +107,14 @@
                                                 <a class="navbar-brand" href="NuevaDireccion.jsp">Click aqui</a>
                                             </div> 
                                         </div>
+                                        <div class="row">
+                                            <div class="col-sm-3 col-md-2 col-5">
+                                                <label style="font-weight:bold;">Hacer orden</label>
+                                            </div>
+                                            <div class="col-md-8 col-6">
+                                                <a class="navbar-brand" href="menu.jsp">Click aqui</a>
+                                            </div> 
+                                        </div>
                                     </div>
                                     <div class="row">
                                         <table>
