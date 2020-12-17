@@ -5,7 +5,8 @@
     String password = request.getParameter("password");
     conexion con = new conexion();
     
-con.setRs("SELECT Cod_Empleado, Email, Contraseña FROM pupuseria_final.empleados where Email ='"+username+"'; ");
+con.setRs("SELECT count(Email), Contraseña FROM usuarios where Email ='"+username+"'and "
+ + "Contraseña='"+ password +"'");
 
 ResultSet rs = con.GetRs();
     rs.next();
@@ -14,14 +15,15 @@ if(rs.getInt(1) == 1){
     con.cerrarConexion();
     //Se asignan parametros de sesión
     HttpSession sesionOk = request.getSession();
-    sesionOk.setAttribute("usuario", username);
+    sesionOk.setAttribute("username", username);
+    sesionOk.setAttribute("password", password);
     %>
-<jsp:forward page="menu.jsp" />
+<jsp:forward page="Perfil_usuario.jsp" />
 <%
     }
 else{
     %>
-<jsp:forward page="index.jsp">
+<jsp:forward page="login.jsp">
     <jsp:param name="error" value="Usuario y/o clave Incorrecto. Vuelve a intentarlo" />
 </jsp:forward>
 <%

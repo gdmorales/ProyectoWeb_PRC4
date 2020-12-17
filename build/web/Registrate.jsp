@@ -1,43 +1,64 @@
-<%-- 
-    Document   : Registrate
-    Created on : 12-04-2020, 12:20:16 PM
-    Author     : gerso
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+        <!-- Custom Theme files -->
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="JS/jscontent.js" type="text/javascript"></script>
-        <link href="CSS/registrate.css" rel="stylesheet" type="text/css"/>
+        <!-- //Custom Theme files -->
+        <!-- web font -->
+        <link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
+        <!-- //web font -->
+        <link href="registrate.css" rel="stylesheet" type="text/css"/>
         <title>Registrate</title>
     </head>
     <body>
-        <div class="container">
-            <div class="overlay" id="overlay">
-                <div class="sign-in" id="sign-in">
-                    <h1>Hola de nuevo!</h1>
-                    <p>Si ya posees una cuenta puedes iniciar sesion aquí.</p>
-                    <button class="switch-button" id="slide-right-button">Iniciar sesion</button>
-                </div>
-            </div>
-            <div class="form">
-                <div class="sign-up" id="sign-up-info">
-                    <h1>Registrate</h1>
-                    <p class="small">Llena los siguientes campos para crear un nuevo usuario:</p>
-                    <form id="sign-up-form">
-                        <input type="text" placeholder="Nombre Completo"/>
-                        <input type="email" placeholder="Correo"/>
-                        <input type="password" placeholder="Contraseña"/>
-                        <input type="password" placeholder="Confirmar contraseña"/>
-                        <button class="control-button up">Registrarse</button>
-                    </form>
-                </div>
-            </div>
+        <%
+            if (request.getParameter("error") != null) {
+        %>
+        <div class="alert alert-danger">
+            <strong>Error!</strong>
+            <%= request.getParameter("error")%>
+            <br>
         </div>
+        <%
+            }
+        %>
+        <!-- main -->
+        <div class="main-w3layouts wrapper">
+            <h1>Registrate</h1>
+            <div class="main-agileinfo">
+                <div class="agileits-top">
+                    <form id="register-form" class="form" action="signup.jsp" method="post">
+                        <input class="text" type="text" name="name" placeholder="Nombre Completo" required/>
+                        <input class="text email" type="email" name="email" placeholder="Correo" required/>
+                        <input class="text" type="password" name="pass1" placeholder="Contraseña" required/>
+                        <input class="text w3lpass" type="password" name="pass2" placeholder="Confirmar contraseña" required/>
+                        <div class="wthree-text">
+                            <div class="clear"> </div>
+                        </div>
+                        <input type="submit" value="REGISTRARSE">
+                    </form>
+                    <p>Tienes ya una cuenta? <a href="login.jsp"> Ingresa ahora!</a></p>
+                </div>
+            </div>
+            <ul class="colorlib-bubbles">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <!-- //main -->
     </body>
 </html>
