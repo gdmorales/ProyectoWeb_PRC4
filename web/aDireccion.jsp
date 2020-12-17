@@ -6,7 +6,7 @@
 <%@page session="true" language="java" import="java.util.*" %>
 <%@page import="controlador.conexion" import="java.sql.*" %>
 <%
-    String Insertar = "CALL InsertarDireccion(?,?,?,?)";
+    String Insertar = "CALL InsertarDireccion(?,?,?,?,?)";
     HttpSession sesion = request.getSession();
     String Municipio = request.getParameter("municipio");
     String Direccion = request.getParameter("direccion");
